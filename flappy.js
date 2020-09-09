@@ -2,9 +2,9 @@ var mainstate = {
 	preload: function() {
 		flappySmudge.load.image('smudge', 'images/smudge.png');
 		flappySmudge.load.image('cucumber', 'images/pipember.png');
-		flappySmudge.load.audio('jumpSmudge', 'sounds/jump.wav');
-		flappySmudge.load.audio('fall', 'sounds/fall.wav');
-		flappySmudge.load.audio('song', 'sounds/song.mp3');
+		flappySmudge.load.audio('jumpSmudge', 'sounds/jump.wav');	//https://freesound.org/people/cabled_mess/sounds/350900/
+		flappySmudge.load.audio('fall', 'sounds/fall.wav');			//https://freesound.org/people/timtube/sounds/58981/?fbclid=IwAR2cgVcPKLekPH2bLPPvRLDz9g1O66cO1NCjSfEK4_M2n8JMJDBng1vj4TA
+		flappySmudge.load.audio('song', 'sounds/song.mp3');			//https://freesound.org/people/yummie/sounds/410574/
 	},
 
 	create: function() {
