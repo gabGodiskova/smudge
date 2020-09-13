@@ -47,7 +47,7 @@ var mainstate = {
 			this.restartGame();
 		}
 
-		flappySmudge.physics.arcade.overlap(this.smudge, this.cucumbers, this.hitCucumber, null, this);
+		flappySmudge.physics.arcade.overlap(this.smudge, this.cucumbers, this.hitCucumber, null, this);		//smudge overlaps cucumber
 
 		if (!this.paused && this.smudge.angle < 20) {
 			this.smudge.angle += 1;
@@ -87,7 +87,7 @@ var mainstate = {
 		console.log(Object.keys(cucumber));
 
 		if (rotate) {
-			cucumber.displayHeight = -1 * cucumber.height;
+			cucumber.displayHeight = -1 * cucumber.height;		//rotating the cucumber upside down
 			
 			cucumber.anchor.set(0.5, 0.5);
 			cucumber.angle += 180;
@@ -97,25 +97,25 @@ var mainstate = {
 
 		flappySmudge.physics.arcade.enable(cucumber);
 
-		cucumber.body.velocity.x = -200;
+		cucumber.body.velocity.x = -200;		//cucumbers move to the left
 
 		cucumber.checkWorldBounds = true;
-		cucumber.outOfBoundsKill = true;
+		cucumber.outOfBoundsKill = true;		//cucumbers disappear
 	},
 
 	addLotsOfCucumbers: function() {
 		const GAP = 150;
-		var gapPosition = Math.floor(Math.random() * 250) + 50;
+		var gapPosition = Math.floor(Math.random() * 250) + 50;		//gap position between a pair of cucumbers
 
 		this.addCucumber(400,gapPosition - 300,true); 	//upper cucumber, rotate == true
 		this.addCucumber(400,gapPosition + GAP,false);	//lower cucumber, rotate == false
 
 		this.score += 1;					//score count
-		this.labelScore.text = this.score - 1;
+		this.labelScore.text = this.score - 1;		//minus one for starting with zero score
 	},
 
 	hitCucumber: function() {
-		if (!this.smudge.alive) {
+		if (!this.smudge.alive) {					
 			return;
 		}
 
